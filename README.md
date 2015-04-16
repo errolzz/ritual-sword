@@ -1,8 +1,17 @@
 # ritual-sword
 An RPG built with phaser.io
 
-## To run:
-$ harp server game/src --port 3000
+### Install Harp.js
+```shell
+npm install -g harp
+```
 
-## To compile:
-$ harp compile game/src dist
+### Start the harp server:
+```shell
+harp server game/src --port 3000
+```
+
+### To compile:
+```shell
+harp compile game/src dist
+```
