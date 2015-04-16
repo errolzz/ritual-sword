@@ -1,0 +1,325 @@
+
+$gray:      #aaa;
+$black:     #23211e;
+$white:     #f6f6f6;
+$red:       #d83535;
+
+@font-face {
+    font-family: 'khulaextrabold';
+    src: url('../fonts/Khula-ExtraBold-webfont.eot');
+    src: url('../fonts/Khula-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Khula-ExtraBold-webfont.woff2') format('woff2'),
+         url('../fonts/Khula-ExtraBold-webfont.woff') format('woff'),
+         url('../fonts/Khula-ExtraBold-webfont.ttf') format('truetype'),
+         url('../fonts/Khula-ExtraBold-webfont.svg#khulaextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "khulaextrabold";
+    color: $white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#arena, #menu, #story, #tutorial, #points, #death, #confirm {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $black;
+    display: none;
+}
+
+
+.h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#arena {
+    
+}
+
+#menu {
+    text-align: center;
+
+    .img {
+        width: 86%;
+        margin: 20px auto 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    li {
+        font-size: 28px;
+        background: #333;
+        cursor: pointer;
+        margin-bottom: 2px;
+        color: $gray;
+        overflow: auto;
+        height: 72px;
+
+        img {
+            display: none;
+            vertical-align: middle;
+            margin: 6px 6px 6px 0;
+        }
+
+        p {
+            margin-top: 18px;
+        }
+
+        &.selected {
+            color: $white;
+            img {
+                display: inline;
+            }
+            p {
+                display: inline;
+            }
+        }
+    }
+
+    #play {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #clear {
+        position: absolute;
+        bottom: 10px;
+        left: 3%;
+        background: $black;
+        color: $red;
+        display: none;
+    }
+
+}
+
+#story {
+    #chat {
+        padding: 3%;
+        overflow-y: scroll;
+
+        .line {
+            opacity: 0;
+            overflow: auto;
+            padding-bottom: 15px;
+        }
+
+        .icon {
+            width: 18%;
+            height: auto;
+            display: inline-block;
+            margin-right: 2%;
+            float: left;
+        }
+
+        p {
+            float: left;
+            color: #bbb;
+            display: inline-block;
+            font-size: 20px;
+            padding: 5px 0 0;
+            line-height: 1.2;
+
+            &.brinley {
+                color: $red;
+                width: 74%;
+            }
+            &.npc {
+                color: $white;
+                width: 74%;
+            }
+        }
+    }
+
+    #fight {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        right: 3%;
+        cursor: pointer;
+    }
+
+    #quit {
+        position: absolute;
+        background: $black;
+        color: $red;
+        bottom: 10px;
+        left: 3%;
+        cursor: pointer;
+    }
+
+    #challenge {
+        display: none;
+        position: absolute;
+        top: 266px;
+        left: 3%;
+        width: 94%;
+        cursor: pointer;
+    }
+}
+
+#tutorial {
+    .slide {
+        display: none;
+
+        p {
+            color: white;
+            font-size: 20px;
+            padding: 5px 5% 15px;
+            line-height: 1.2;
+
+            &.label {
+                font-size: 15px;
+                color: $red;
+                padding: 30px 5% 4px;
+            }
+        }
+
+        .top {
+            width: 100%;
+            background: black;
+        }
+
+        .img {
+            width: 60%;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    #continue {
+        position: absolute;
+        bottom: 10px;
+        right: 3%;
+        cursor: pointer;
+    }
+}
+
+#points {
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    li {
+        height: 51px;
+        margin-bottom: 20px;
+
+        >div {
+            float: left;
+        }
+
+        .skill {
+            width: 52%;
+            .title {
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 1.2;
+                margin-top: 8px;
+            }
+            .desc {
+                color: $gray;
+                font-size: 14px;
+            }
+        }
+        .level {
+            margin-top: 8px;
+            font-size: 24px;
+            color: $red;
+        }
+
+        .change {
+            float: right;
+
+            div {
+                float: left;
+                width: 50px;
+                padding: 13px 0 6px;
+                margin-left: 1px;
+            }
+        }
+
+        .max {
+            float: right;
+            display: none;
+            color: $white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+    }
+    #remaining {
+        color: $red;
+    }
+    #done {
+        position: absolute;
+        bottom: 10px;
+        right: 3%;
+        display: none;
+    }
+}
+
+#death {
+    text-align: center;
+    padding: 30px 0;
+
+    #revive {
+        display: inline-block;
+        margin-top: 50px;
+    }
+}
+
+#confirm {
+    padding: 40px;
+    #confirm-no {
+        position: absolute;
+        bottom: 10px;
+        left: 3%;
+        cursor: pointer;
+    }
+    #confirm-yes {
+        position: absolute;
+        bottom: 10px;
+        right: 3%;
+        background: $black;
+        color: $red;
+        cursor: pointer;
+    }
+}
+
+
+.btn {
+    padding: 10px 10px 0;
+    min-width: 45%;
+    line-height: 1.1;
+    font-size: 30px;
+    background: $white;
+    color: $black;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
